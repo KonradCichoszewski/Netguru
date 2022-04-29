@@ -23,5 +23,6 @@ jobs:
     - name: Run test
       run: |
         echo --- Running test cases ---
-        MOVIES_MODE=test docker-compose -f ./Netguru/docker-compose.yml --build --abort-on-container-exit --exit-code-from movies-service
+        cd Netguru
+        MOVIES_MODE=test docker-compose up --build --exit-code-from movies-service --abort-on-container-exit
         echo --- Completed test cases ---
